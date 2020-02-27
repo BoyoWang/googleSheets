@@ -3,6 +3,14 @@ function G021_Import_All_CSV(){
 };
 
 function G022_Reset_File(){
+  var spreadsheet = SpreadsheetApp.getActive();
+  var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
+  // if mainSheet doesn't exist create it
+  if (!mainSheet) {
+    spreadsheet.insertSheet(name_importantSheets.mainSheet);
+    mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
+    Logger.log("mainSheet created.");
+  };
   resetFile();
 };
 

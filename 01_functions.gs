@@ -28,11 +28,13 @@ function get_ColRange_In_TitleRow (/*string*/textToFind, /*sheet*/sheet){
 
 
 function changeObjectValueToArray(object){
-  var newArray = [];
-  for ([key, val] in object){
-    newArray.push(val);
-  }; 
-  return newArray
+  
+//  var newArray = [];
+//  for ([key, val] in object){
+//    newArray.push(val);
+//  }; 
+//  return newArray
+  return Object.values(object)// 2020.02.27 : fixed
 };
 
 
