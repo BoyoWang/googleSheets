@@ -1,8 +1,5 @@
 //ZZ_For_CSV
-var folderGoogleDriveID = "1DamhKC87tu8yx9iGbwMXnYP8FcjMPi_g";
-
-//20191210_Burst_P
-//var folderGoogleDriveID = "1Qeb5fVewYN3IHn5x_H2Ie-9Z4_8aA0My";
+var folderGoogleDriveID = "1Yqy7XZpClX3nTxPbN7y_CLUMUQVq5O3g";
 
 var address_firstCell_A1_Style = {
   csvFileList: "A1",
