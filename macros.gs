@@ -19,11 +19,11 @@ function G03_Apply_Actions_To_Sheets() {
 }
 
 function G041_Update_FileList() {
-  updateFileList();
+  S04_updateFileList();
 }
 
 function G042_Change_FileName() {
-  changeFileName();
+  S04_changeFileName();
 }
 
 function G051_Update_SheetList() {

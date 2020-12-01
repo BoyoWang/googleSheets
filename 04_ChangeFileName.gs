@@ -1,4 +1,4 @@
-function updateFileList() {
+function S04_updateFileList() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -21,7 +21,7 @@ function updateFileList() {
   S02_Sort_CSV_FileList();
 }
 
-function changeFileName() {
+function S04_changeFileName() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -61,5 +61,5 @@ function changeFileName() {
     file.setName(fileNewNameArray[i]);
   }
 
-  updateFileList();
+  S04_updateFileList();
 }
