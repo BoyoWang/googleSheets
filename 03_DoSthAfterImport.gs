@@ -1,4 +1,4 @@
-function ApplyActionToAllSheets() {
+function S03_ApplyActionToAllSheets() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -52,14 +52,14 @@ function ApplyActionToAllSheets() {
       rangeCopyFrom.copyTo(newSheet.getRange(1, j + 1));
     }
 
-    CreateAndAdjustTimeColumn(newSheet);
+    S03_CreateAndAdjustTimeColumn(newSheet);
 
     //Delete old and rename new sheet
     spreadsheet.deleteSheet(targetSheet);
   }
 }
 
-function CreateAndAdjustTimeColumn(sheet) {
+function S03_CreateAndAdjustTimeColumn(sheet) {
   var spreadsheet = SpreadsheetApp.getActive().getActiveSheet();
   var spreadsheet = sheet;
 

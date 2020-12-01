@@ -15,7 +15,7 @@ function G022_Reset_File() {
 }
 
 function G03_Apply_Actions_To_Sheets() {
-  ApplyActionToAllSheets();
+  S03_ApplyActionToAllSheets();
 }
 
 function G041_Update_FileList() {
