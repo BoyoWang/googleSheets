@@ -27,11 +27,11 @@ function G042_Change_FileName() {
 }
 
 function G051_Update_SheetList() {
-  updateSheetList();
+  S05_updateSheetList();
 }
 
 function G052_Change_SheetName() {
-  changeSheetsName();
+  S05_changeSheetsName();
 }
 
 function GZZ1_MonotarouExcuteAll() {

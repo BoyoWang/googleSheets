@@ -1,4 +1,4 @@
-function updateSheetList() {
+function S05_updateSheetList() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -17,7 +17,7 @@ function updateSheetList() {
   ).applyRowBanding(); //Banding rows for sheetList
 }
 
-function changeSheetsName() {
+function S05_changeSheetsName() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -56,5 +56,5 @@ function changeSheetsName() {
       .setName(sheetNewNameArray[i]);
   }
 
-  updateSheetList();
+  S05_updateSheetList();
 }
