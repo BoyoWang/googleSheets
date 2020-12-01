@@ -40,7 +40,7 @@ function ApplyActionToAllSheets() {
     //copy needed columns
     var columnsToKeepText = [
       ["us", "General"],
-      ["CH1", "#,##0.000"],
+      ["CH2", "#,##0.000"],
     ];
     for (j = 0; j < columnsToKeepText.length; j++) {
       var rangeCopyFrom = FN_get_ColRange_In_TitleRow(
