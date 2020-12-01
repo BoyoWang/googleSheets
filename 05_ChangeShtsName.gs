@@ -10,7 +10,7 @@ function updateSheetList() {
 
   Make_list_For_all_sheets(mainSheet, address_firstCell_A1_Style.sheetList);
 
-  returnListRangeExcludeTopRows(
+  FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.sheetList,
     1
@@ -24,7 +24,7 @@ function changeSheetsName() {
   var rangeSheetListFirstCell = mainSheet.getRange(
     address_firstCell_A1_Style.sheetList
   );
-  var rangeSheetListArray = returnListRangeExcludeTopRows(
+  var rangeSheetListArray = FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.sheetList,
     2

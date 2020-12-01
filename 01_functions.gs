@@ -1,4 +1,4 @@
-function findCellByText_ReturnRange(/*sheet*/ sheet, /*string*/ textToFind) {
+function FN_findCellByText_ReturnRange(/*sheet*/ sheet, /*string*/ textToFind) {
   var spreadsheet = SpreadsheetApp.getActive();
   var allDataRange = sheet.getDataRange();
   var allDataRangeData = allDataRange.getValues();
@@ -12,7 +12,7 @@ function findCellByText_ReturnRange(/*sheet*/ sheet, /*string*/ textToFind) {
   }
 }
 
-function get_ColRange_In_TitleRow(/*string*/ textToFind, /*sheet*/ sheet) {
+function FN_get_ColRange_In_TitleRow(/*string*/ textToFind, /*sheet*/ sheet) {
   var dataRange = sheet.getDataRange();
   var data = dataRange.getValues(); //data[row][col]
 
@@ -23,7 +23,7 @@ function get_ColRange_In_TitleRow(/*string*/ textToFind, /*sheet*/ sheet) {
   }
 }
 
-function changeObjectValueToArray(object) {
+function FN_changeObjectValueToArray(object) {
   //  var newArray = [];
   //  for ([key, val] in object){
   //    newArray.push(val);
@@ -32,11 +32,11 @@ function changeObjectValueToArray(object) {
   return Object.values(object); // 2020.02.27 : fixed
 }
 
-function makeFirst2ArrayOfLists(
+function FN_makeFirst2ArrayOfLists(
   /*object*/ ListTitleColIndexObject,
   /*string*/ listMainTitle
 ) {
-  var indexInfoArray = changeObjectValueToArray(ListTitleColIndexObject);
+  var indexInfoArray = FN_changeObjectValueToArray(ListTitleColIndexObject);
   indexInfoArray.sort(function (a, b) {
     return a[0] - b[0];
   }); //sort the indexInfoArray by index
@@ -60,7 +60,7 @@ function makeFirst2ArrayOfLists(
   return arrayReturn;
 }
 
-function returnListRangeExcludeTopRows(
+function FN_returnListRangeExcludeTopRows(
   sheet,
   firstCellAddress_In_A1Style,
   intExcludeRowNum

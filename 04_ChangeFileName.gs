@@ -13,7 +13,7 @@ function updateFileList() {
     mainSheet,
     address_firstCell_A1_Style.csvFileList
   );
-  returnListRangeExcludeTopRows(
+  FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.csvFileList,
     1
@@ -28,7 +28,7 @@ function changeFileName() {
   var rangeFileListFirstCell = mainSheet.getRange(
     address_firstCell_A1_Style.csvFileList
   );
-  var rangeFileListArray = returnListRangeExcludeTopRows(
+  var rangeFileListArray = FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.csvFileList,
     2

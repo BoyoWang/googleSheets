@@ -11,7 +11,9 @@ function Delete_NonImportant_Sheets() {
   }
 
   function TestIfSheetIsImportant(sheetName) {
-    var importantSheetsArray = changeObjectValueToArray(name_importantSheets);
+    var importantSheetsArray = FN_changeObjectValueToArray(
+      name_importantSheets
+    );
     if (importantSheetsArray.indexOf(sheetName) > -1) {
       return true;
     } else {
@@ -31,7 +33,7 @@ function Make_list_For_all_sheets(sheet, firstCellAddress_In_A1Style) {
   }
 
   //Make finalList array
-  var finalList = makeFirst2ArrayOfLists(
+  var finalList = FN_makeFirst2ArrayOfLists(
     address_firstCell_A1_Style.sheetListTitleColIndex,
     address_firstCell_A1_Style.sheetList_MainTitleText
   ); //First 2 rows
@@ -66,7 +68,7 @@ function list_all_files_inside_folder(folderID, sheet, cellAddress_In_A1Style) {
   var folder = DriveApp.getFolderById(folderID);
 
   //First 2 rows
-  var list = makeFirst2ArrayOfLists(
+  var list = FN_makeFirst2ArrayOfLists(
     address_firstCell_A1_Style.csvFileListTitleColIndex,
     address_firstCell_A1_Style.csvFileList_MainTitleText
   );
@@ -126,7 +128,7 @@ function importAll_CSV_Files() {
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
   //Read file list and make array
-  var rangeCSV_FileList = returnListRangeExcludeTopRows(
+  var rangeCSV_FileList = FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.csvFileList,
     2
@@ -153,7 +155,7 @@ function importAll_CSV_Files() {
 function Sort_CSV_FileList() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
-  var rangeToSort = returnListRangeExcludeTopRows(
+  var rangeToSort = FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.csvFileList,
     2
@@ -192,7 +194,7 @@ function importCSVExcuteAll() {
     address_firstCell_A1_Style.csvFileList
   );
 
-  returnListRangeExcludeTopRows(
+  FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.csvFileList,
     1
@@ -203,7 +205,7 @@ function importCSVExcuteAll() {
 
   Make_list_For_all_sheets(mainSheet, address_firstCell_A1_Style.sheetList);
 
-  returnListRangeExcludeTopRows(
+  FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.sheetList,
     1

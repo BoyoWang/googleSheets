@@ -5,7 +5,7 @@ function ApplyActionToAllSheets() {
   var sheetList;
 
   //Aquire sheet list
-  var rangesheetList = returnListRangeExcludeTopRows(
+  var rangesheetList = FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.sheetList,
     2
@@ -24,7 +24,7 @@ function ApplyActionToAllSheets() {
   //Delete usless rows
   for (i = 0; i < sheetList.length; i++) {
     var targetSheet = spreadsheet.getSheetByName(sheetList[i]);
-    var DataStart = findCellByText_ReturnRange(targetSheet, "番号");
+    var DataStart = FN_findCellByText_ReturnRange(targetSheet, "番号");
     var rowsToDelete = DataStart.getRow() - 1;
     targetSheet.deleteRows(1, rowsToDelete);
 
@@ -43,7 +43,7 @@ function ApplyActionToAllSheets() {
       ["CH1", "#,##0.000"],
     ];
     for (j = 0; j < columnsToKeepText.length; j++) {
-      var rangeCopyFrom = get_ColRange_In_TitleRow(
+      var rangeCopyFrom = FN_get_ColRange_In_TitleRow(
         columnsToKeepText[j][0],
         targetSheet
       );

@@ -15,7 +15,7 @@ function S07_ReadSheets_MakeSheetList(iShtStart, iShtEnd, XorY) {
   var rangeSheetListFirstCell = mainSheet.getRange(
     address_firstCell_A1_Style.sheetList
   );
-  var rangeSheetListArray = returnListRangeExcludeTopRows(
+  var rangeSheetListArray = FN_returnListRangeExcludeTopRows(
     mainSheet,
     address_firstCell_A1_Style.sheetList,
     2
