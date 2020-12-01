@@ -1,5 +1,5 @@
 function G021_Import_All_CSV() {
-  importCSVExcuteAll();
+  S02_importCSVExcuteAll();
 }
 
 function G022_Reset_File() {
@@ -11,7 +11,7 @@ function G022_Reset_File() {
     mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
     Logger.log("mainSheet created.");
   }
-  resetFile();
+  S02_resetFile();
 }
 
 function G03_Apply_Actions_To_Sheets() {
@@ -52,7 +52,7 @@ function GZZ2_ResetFile() {
     Logger.log("mainSheet created.");
   }
 
-  resetFile();
+  S02_resetFile();
 }
 
 function GZZ3_JointShts() {

@@ -8,7 +8,7 @@ function updateFileList() {
 
   rangeCurrentFileList.clear();
 
-  list_all_files_inside_folder(
+  S02_list_all_files_inside_folder(
     folderGoogleDriveID,
     mainSheet,
     address_firstCell_A1_Style.csvFileList
@@ -18,7 +18,7 @@ function updateFileList() {
     address_firstCell_A1_Style.csvFileList,
     1
   ).applyRowBanding(); //Banding rows for csvFileList
-  Sort_CSV_FileList();
+  S02_Sort_CSV_FileList();
 }
 
 function changeFileName() {

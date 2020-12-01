@@ -1,4 +1,4 @@
-function Delete_NonImportant_Sheets() {
+function S02_Delete_NonImportant_Sheets() {
   var spreadsheet = SpreadsheetApp.getActive();
   var sheets = spreadsheet.getSheets();
 
@@ -22,7 +22,7 @@ function Delete_NonImportant_Sheets() {
   }
 }
 
-function Make_list_For_all_sheets(sheet, firstCellAddress_In_A1Style) {
+function S02_Make_list_For_all_sheets(sheet, firstCellAddress_In_A1Style) {
   var spreadsheet = SpreadsheetApp.getActive();
   var sheetListFirstRange = sheet.getRange(firstCellAddress_In_A1Style);
 
@@ -64,7 +64,11 @@ function Make_list_For_all_sheets(sheet, firstCellAddress_In_A1Style) {
   );
 }
 
-function list_all_files_inside_folder(folderID, sheet, cellAddress_In_A1Style) {
+function S02_list_all_files_inside_folder(
+  folderID,
+  sheet,
+  cellAddress_In_A1Style
+) {
   var folder = DriveApp.getFolderById(folderID);
 
   //First 2 rows
@@ -102,7 +106,7 @@ function list_all_files_inside_folder(folderID, sheet, cellAddress_In_A1Style) {
   );
 }
 
-function importCSVFromGoogleDrive(fileID) {
+function S02_importCSVFromGoogleDrive(fileID) {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -123,7 +127,7 @@ function importCSVFromGoogleDrive(fileID) {
   );
 }
 
-function importAll_CSV_Files() {
+function S02_importAll_CSV_Files() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -148,11 +152,11 @@ function importAll_CSV_Files() {
 
   //Import every file
   for (i = 0; i < csvFileID_List.length; i++) {
-    importCSVFromGoogleDrive(csvFileID_List[i]);
+    S02_importCSVFromGoogleDrive(csvFileID_List[i]);
   }
 }
 
-function Sort_CSV_FileList() {
+function S02_Sort_CSV_FileList() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
   var rangeToSort = FN_returnListRangeExcludeTopRows(
@@ -168,15 +172,15 @@ function Sort_CSV_FileList() {
   Logger.log("csvFileList is sorted.");
 }
 
-function resetFile() {
+function S02_resetFile() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
-  Delete_NonImportant_Sheets();
+  S02_Delete_NonImportant_Sheets();
   mainSheet.clearContents().clearFormats();
   Logger.log("File is reset.");
 }
 
-function importCSVExcuteAll() {
+function S02_importCSVExcuteAll() {
   var spreadsheet = SpreadsheetApp.getActive();
   var mainSheet = spreadsheet.getSheetByName(name_importantSheets.mainSheet);
 
@@ -187,8 +191,8 @@ function importCSVExcuteAll() {
     Logger.log("mainSheet created.");
   }
 
-  resetFile();
-  list_all_files_inside_folder(
+  S02_resetFile();
+  S02_list_all_files_inside_folder(
     folderGoogleDriveID,
     mainSheet,
     address_firstCell_A1_Style.csvFileList
@@ -200,10 +204,10 @@ function importCSVExcuteAll() {
     1
   ).applyRowBanding(); //Banding rows for csvFileList
 
-  Sort_CSV_FileList();
-  importAll_CSV_Files();
+  S02_Sort_CSV_FileList();
+  S02_importAll_CSV_Files();
 
-  Make_list_For_all_sheets(mainSheet, address_firstCell_A1_Style.sheetList);
+  S02_Make_list_For_all_sheets(mainSheet, address_firstCell_A1_Style.sheetList);
 
   FN_returnListRangeExcludeTopRows(
     mainSheet,
